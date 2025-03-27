@@ -31,6 +31,8 @@ const StyledButton = styled.button`
   }
 `;
 
+const API_URL = "http://localhost:8000" || "https://automation-of-pipelines.onrender.com";
+
 // Access nodes and edges from the global store
 export const SubmitButton = () => {
   const { nodes, edges } = useStore(
@@ -44,7 +46,7 @@ export const SubmitButton = () => {
 
     try {
       // Send data to the backend API
-      const response = await fetch("http://localhost:8000/pipelines/parse", {
+      const response = await fetch(`${API_URL}/pipelines/parse`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
