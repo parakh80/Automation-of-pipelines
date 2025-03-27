@@ -31,7 +31,7 @@ const StyledButton = styled.button`
   }
 `;
 
-const API_URL = "http://localhost:8000" || "https://automation-of-pipelines.onrender.com";
+const API_URL = process.env.REACT_APP_BACKEND_URL || "https://automation-of-pipelines.onrender.com";
 
 // Access nodes and edges from the global store
 export const SubmitButton = () => {
